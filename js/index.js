@@ -66,9 +66,10 @@ const createListTrailers = (parent, srcList) => {
 
 
     @media (max-width: 900px) {
-    button {
+    #button {
         width: 36px;
         height: 36px;
+        top: 40%;
     }
     }
     

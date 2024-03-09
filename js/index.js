@@ -93,13 +93,13 @@ const createListTrailers = (parent, srcList) => {
   };
 };
 
-controlTrailer = (trailerWrappers, treilerFrame, i = 0, j = 0) => {
+controlTrailer = (trailerWrappers, treilerFrames, i = 0, j = 0) => {
   if (i !== j) {
     trailerWrappers[i].style.display = "none";
-    treilerFrame[i].src = "";
+    treilerFrames[i].srcdoc = "";
   } else {
     trailerWrappers[i].style.display = "block";
-    treilerFrame[i].src = treilerFrame[i].dataset.src;
+    treilerFrames[i].srcdoc = treilerFrames[i].dataset.srcdoc;
   }
 };
 
@@ -117,6 +117,7 @@ const init = () => {
   );
 
   trailersButtons.forEach((btn, j) => {
+    treilerFrames[j].dataset.srcdoc = treilerFrames[j].srcdoc;
     btn.addEventListener("click", () => {
       trailersButtons.forEach((tBtn, i) => {
         if (tBtn === btn) {
